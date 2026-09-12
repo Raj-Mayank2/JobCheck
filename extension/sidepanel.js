@@ -295,7 +295,7 @@ analyzeButton.addEventListener(
 
             const resumeResponse =
                 await fetch(
-                    "http://127.0.0.1:8000/resume",
+                    "https://jobcheck-api.onrender.com/resume",
                     {
                         method: "POST",
 
@@ -402,7 +402,7 @@ analyzeButton.addEventListener(
 
             const jobResponse =
                 await fetch(
-                    "http://127.0.0.1:8000/analyze-job",
+                    "https://jobcheck-api.onrender.com/analyze-job",
                     {
                         method: "POST",
 
@@ -500,7 +500,7 @@ analyzeButton.addEventListener(
 
             const matchResponse =
                 await fetch(
-                    "http://127.0.0.1:8000/match",
+                    "https://jobcheck-api.onrender.com/match",
                     {
                         method: "POST",
 
