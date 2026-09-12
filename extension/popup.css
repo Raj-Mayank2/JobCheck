@@ -1,0 +1,623 @@
+* {
+    box-sizing: border-box;
+}
+
+
+html {
+    width: 420px;
+}
+
+
+body {
+    width: 420px;
+    min-height: 600px;
+    margin: 0;
+
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    color: #f5f7ff;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(99, 102, 241, 0.28),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(168, 85, 247, 0.22),
+            transparent 35%
+        ),
+        #080b14;
+}
+
+
+body::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+}
+
+
+.app {
+    padding: 20px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    margin-bottom: 18px;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+    font-size: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #a855f7
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(99, 102, 241, 0.35);
+}
+
+
+.brand h1 {
+    margin: 0;
+
+    font-size: 20px;
+    font-weight: 700;
+
+    letter-spacing: -0.4px;
+}
+
+
+.brand p {
+    margin: 3px 0 0;
+
+    color: #8f96aa;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card {
+    margin-bottom: 12px;
+    padding: 16px;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 10px 35px
+        rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.glass-card:hover {
+    transform: translateY(-1px);
+
+    border-color:
+        rgba(255, 255, 255, 0.14);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+
+.icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background:
+        rgba(99, 102, 241, 0.14);
+
+    font-size: 16px;
+}
+
+
+.section-title h2 {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+
+.section-title p {
+    margin: 3px 0 0;
+
+    color: #858ca0;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+#resumeInput {
+    display: none;
+}
+
+
+.file-upload {
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px;
+
+    border: 1px dashed
+        rgba(255, 255, 255, 0.18);
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.file-upload:hover {
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border-color:
+        rgba(129, 140, 248, 0.6);
+}
+
+
+.upload-icon {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        rgba(99, 102, 241, 0.15);
+
+    font-size: 18px;
+}
+
+
+.file-upload strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+
+.file-upload span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #777f94;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
+.analyze-btn {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 12px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #6366f1,
+            #8b5cf6
+        );
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 25px
+        rgba(99, 102, 241, 0.28);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.analyze-btn:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(99, 102, 241, 0.38);
+}
+
+
+.analyze-btn:active {
+    transform: translateY(0);
+}
+
+
+.analyze-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    min-height: 18px;
+
+    margin: 10px 2px;
+
+    color: #9299ac;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   JOB CARD
+========================= */
+
+.job-badge {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+}
+
+
+.job-card h2 {
+    margin: 0;
+
+    font-size: 20px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.company {
+    margin: 7px 0 0;
+
+    color: #d1d5e2;
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+.location {
+    margin: 4px 0 0;
+
+    color: #858ca0;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+.score-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+
+.eyebrow {
+    color: #9299ac;
+
+    font-size: 8px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.score-card h3 {
+    margin: 5px 0;
+
+    font-size: 14px;
+}
+
+
+.score-card p {
+    max-width: 230px;
+
+    margin: 0;
+
+    color: #858ca0;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+.score {
+    width: 72px;
+    height: 72px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 5px solid
+        rgba(129, 140, 248, 0.25);
+
+    background:
+        rgba(99, 102, 241, 0.08);
+
+    box-shadow:
+        inset 0 0 20px
+        rgba(99, 102, 241, 0.12);
+}
+
+
+.score span {
+    font-size: 17px;
+    font-weight: 800;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+.section-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 11px;
+}
+
+
+.section-heading h3 {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+
+.heading-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    color: #a5b4fc;
+
+    background:
+        rgba(99, 102, 241, 0.12);
+
+    font-size: 11px;
+}
+
+
+.heading-icon.success {
+    color: #86efac;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+}
+
+
+.heading-icon.danger {
+    color: #fca5a5;
+
+    background:
+        rgba(239, 68, 68, 0.12);
+}
+
+
+.heading-icon.warning {
+    color: #fde68a;
+
+    background:
+        rgba(234, 179, 8, 0.12);
+}
+
+
+/* =========================
+   LISTS
+========================= */
+
+.glass-card ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+
+.glass-card li {
+    position: relative;
+
+    margin-bottom: 7px;
+    padding: 8px 10px;
+
+    border-radius: 8px;
+
+    color: #c5cad7;
+
+    background:
+        rgba(255, 255, 255, 0.035);
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+.glass-card li:last-child {
+    margin-bottom: 0;
+}
+
+
+.text-content {
+    margin: 0;
+
+    color: #b6bccb;
+
+    font-size: 11px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================
+   RECOMMENDATIONS
+========================= */
+
+.recommendation-card {
+    border-color:
+        rgba(168, 85, 247, 0.18);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(168, 85, 247, 0.08),
+            rgba(99, 102, 241, 0.04)
+        );
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}

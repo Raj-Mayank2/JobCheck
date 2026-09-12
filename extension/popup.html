@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>JobCheck</title>
+
+    <link
+        rel="stylesheet"
+        href="popup.css"
+    >
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- Header -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="logo">
+                    JC
+                </div>
+
+                <div>
+                    <h1>JobCheck</h1>
+
+                    <p>
+                        AI Job & Resume Matcher
+                    </p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Resume Upload -->
+
+        <section class="glass-card resume-card">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    📄
+                </div>
+
+                <div>
+                    <h2>Your Resume</h2>
+
+                    <p>
+                        Upload PDF or DOCX
+                    </p>
+                </div>
+
+            </div>
+
+
+            <label
+                for="resumeInput"
+                class="file-upload"
+            >
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <div>
+
+                    <strong>
+                        Choose your resume
+                    </strong>
+
+                    <span>
+                        PDF or DOCX
+                    </span>
+
+                </div>
+
+            </label>
+
+
+            <input
+                type="file"
+                id="resumeInput"
+                accept=".pdf,.docx"
+            >
+
+        </section>
+
+
+        <!-- Analyze -->
+
+        <button
+            id="analyzeBtn"
+            class="analyze-btn"
+        >
+
+            <span>
+                ✨
+            </span>
+
+            Analyze Job
+
+        </button>
+
+
+        <!-- Status -->
+
+        <div
+            id="status"
+            class="status"
+        ></div>
+
+
+        <!-- Results -->
+
+        <div
+            id="result"
+            class="hidden"
+        >
+
+            <!-- Job Header -->
+
+            <section class="glass-card job-card">
+
+                <div class="job-badge">
+                    JOB ANALYSIS
+                </div>
+
+                <h2 id="jobTitle">
+                    Software Engineer
+                </h2>
+
+                <p
+                    id="company"
+                    class="company"
+                ></p>
+
+                <p
+                    id="location"
+                    class="location"
+                ></p>
+
+            </section>
+
+
+            <!-- Match Score -->
+
+            <section class="glass-card score-card">
+
+                <div>
+
+                    <span class="eyebrow">
+                        RESUME MATCH
+                    </span>
+
+                    <h3>
+                        Your compatibility
+                    </h3>
+
+                    <p>
+                        Based on the job requirements
+                        and your resume.
+                    </p>
+
+                </div>
+
+
+                <div class="score">
+
+                    <span id="matchScore">
+                        0%
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- Required Skills -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        ✓
+                    </span>
+
+                    <h3>
+                        Required Skills
+                    </h3>
+
+                </div>
+
+                <ul id="requiredSkills"></ul>
+
+            </section>
+
+
+            <!-- Preferred Skills -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        ★
+                    </span>
+
+                    <h3>
+                        Preferred Skills
+                    </h3>
+
+                </div>
+
+                <ul id="preferredSkills"></ul>
+
+            </section>
+
+
+            <!-- Experience -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        💼
+                    </span>
+
+                    <h3>
+                        Experience
+                    </h3>
+
+                </div>
+
+                <p
+                    id="experience"
+                    class="text-content"
+                ></p>
+
+            </section>
+
+
+            <!-- Matched Skills -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon success">
+                        ✓
+                    </span>
+
+                    <h3>
+                        Matched Skills
+                    </h3>
+
+                </div>
+
+                <ul id="matchedSkills"></ul>
+
+            </section>
+
+
+            <!-- Missing Skills -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon danger">
+                        !
+                    </span>
+
+                    <h3>
+                        Missing Skills
+                    </h3>
+
+                </div>
+
+                <ul id="missingSkills"></ul>
+
+            </section>
+
+
+            <!-- Partial Matches -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon warning">
+                        ~
+                    </span>
+
+                    <h3>
+                        Partial Matches
+                    </h3>
+
+                </div>
+
+                <ul id="partialMatches"></ul>
+
+            </section>
+
+
+            <!-- Experience Match -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        📊
+                    </span>
+
+                    <h3>
+                        Experience Match
+                    </h3>
+
+                </div>
+
+                <p
+                    id="experienceMatch"
+                    class="text-content"
+                ></p>
+
+            </section>
+
+
+            <!-- Recommendations -->
+
+            <section class="glass-card recommendation-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        💡
+                    </span>
+
+                    <h3>
+                        Resume Recommendations
+                    </h3>
+
+                </div>
+
+                <ul id="recommendations"></ul>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <script src="popup.js"></script>
+
+</body>
+
+</html>

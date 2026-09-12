@@ -1,0 +1,487 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobCheck</title>
+
+    <link rel="stylesheet" href="sidepanel.css">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <!-- HEADER -->
+
+        <header class="header">
+
+            <div class="brand">
+
+                <div class="logo">
+                    JC
+                </div>
+
+                <div>
+                    <h1>JobCheck</h1>
+                    <p>AI Job Match Report</p>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- RESUME -->
+
+        <section class="glass-card resume-card">
+
+            <div class="section-title">
+
+                <div class="icon">
+                    📄
+                </div>
+
+                <div>
+                    <h2>Your Resume</h2>
+                    <p>Upload PDF or DOCX</p>
+                </div>
+
+            </div>
+
+            <label for="resumeInput" class="file-upload">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <div>
+
+                    <strong>
+                        Choose your resume
+                    </strong>
+
+                    <span id="fileName">
+                        PDF or DOCX
+                    </span>
+
+                </div>
+
+            </label>
+
+            <input type="file" id="resumeInput" accept=".pdf,.docx">
+
+        </section>
+
+
+        <!-- ANALYZE -->
+
+        <button id="analyzeBtn" class="analyze-btn">
+
+            <span>✨</span>
+
+            Analyze Job
+
+        </button>
+
+
+        <div id="status" class="status"></div>
+
+
+        <!-- REPORT -->
+
+        <div id="result" class="hidden">
+
+            <!-- JOB HEADER -->
+
+            <section class="glass-card job-card">
+
+                <div class="job-badge">
+                    JOBCHECK REPORT
+                </div>
+
+                <h2 id="jobTitle">
+                    Software Engineer
+                </h2>
+
+                <p id="company" class="company"></p>
+
+                <p id="location" class="location"></p>
+
+            </section>
+
+
+            <!-- SCORE -->
+
+
+            <section class="glass-card score-card">
+
+                <div class="score-info">
+
+                    <span class="eyebrow">
+                        OVERALL MATCH
+                    </span>
+
+                    <h3 id="matchLabel">
+                        Moderate Match
+                    </h3>
+
+                    <p>
+                        Based on skills and experience
+                    </p>
+
+                </div>
+
+                <div class="score">
+
+                    <span id="matchScore">
+                        0%
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        📊
+                    </span>
+
+                    <h3>
+                        Score Breakdown
+                    </h3>
+
+                </div>
+
+
+                <div class="score-row">
+
+                    <div class="score-row-header">
+
+                        <span>
+                            Required Skills
+                        </span>
+
+                        <strong id="skillsScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div id="skillsProgress" class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="score-row">
+
+                    <div class="score-row-header">
+
+                        <span>
+                            Experience
+                        </span>
+
+                        <strong id="experienceScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div id="experienceProgress" class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="score-row">
+
+                    <div class="score-row-header">
+
+                        <span>
+                            Responsibilities
+                        </span>
+
+                        <strong id="responsibilityScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div id="responsibilityProgress" class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="score-row">
+
+                    <div class="score-row-header">
+
+                        <span>
+                            Preferred Skills
+                        </span>
+
+                        <strong id="preferredScore">
+                            0%
+                        </strong>
+
+                    </div>
+
+                    <div class="progress-bar">
+
+                        <div id="preferredProgress" class="progress-fill"></div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+
+            <!-- QUICK SUMMARY -->
+
+            <section class="summary-grid">
+
+                <div class="glass-card mini-card">
+
+                    <span class="mini-icon">
+                        ✓
+                    </span>
+
+                    <strong id="matchedCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Strengths
+                    </span>
+
+                </div>
+
+
+                <div class="glass-card mini-card">
+
+                    <span class="mini-icon warning">
+                        !
+                    </span>
+
+                    <strong id="missingCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Skill Gaps
+                    </span>
+
+                </div>
+
+
+                <div class="glass-card mini-card">
+
+                    <span class="mini-icon">
+                        ✦
+                    </span>
+
+                    <strong id="recommendationCount">
+                        0
+                    </strong>
+
+                    <span>
+                        Actions
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- SKILLS -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        🎯
+                    </span>
+
+                    <h3>
+                        Skill Match
+                    </h3>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <div class="group-title success-text">
+                        ✓ Matching
+                    </div>
+
+                    <div id="matchedSkills" class="skill-list"></div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <div class="group-title danger-text">
+                        ! Missing
+                    </div>
+
+                    <div id="missingSkills" class="skill-list"></div>
+
+                </div>
+
+
+                <div class="skill-group">
+
+                    <div class="group-title warning-text">
+                        ~ Partial
+                    </div>
+
+                    <div id="partialMatches" class="skill-list"></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- EXPERIENCE -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        💼
+                    </span>
+
+                    <h3>
+                        Experience
+                    </h3>
+
+                </div>
+
+                <p id="experienceMatch" class="text-content"></p>
+
+            </section>
+
+
+            <!-- JOB REQUIREMENTS -->
+
+            <section class="glass-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        📋
+                    </span>
+
+                    <h3>
+                        Job Requirements
+                    </h3>
+
+                </div>
+
+                <div class="requirement-row">
+
+                    <span>
+                        Required Skills
+                    </span>
+
+                    <strong id="requiredCount">
+                        0
+                    </strong>
+
+                </div>
+
+                <div class="requirement-row">
+
+                    <span>
+                        Preferred Skills
+                    </span>
+
+                    <strong id="preferredCount">
+                        0
+                    </strong>
+
+                </div>
+
+                <p id="experience" class="text-content"></p>
+
+            </section>
+
+
+            <!-- ACTIONS -->
+
+            <section class="glass-card recommendation-card">
+
+                <div class="section-heading">
+
+                    <span class="heading-icon">
+                        💡
+                    </span>
+
+                    <h3>
+                        Resume Actions
+                    </h3>
+
+                </div>
+
+                <ul id="recommendations"></ul>
+
+            </section>
+
+
+            <!-- APPLY DECISION -->
+
+            <section class="glass-card apply-card">
+
+                <span class="eyebrow">
+                    RECOMMENDATION
+                </span>
+
+                <h2 id="applyDecision">
+                    🟢 Apply
+                </h2>
+
+                <p id="applyReason">
+                    Strong match with some skill gaps.
+                </p>
+
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <script src="sidepanel.js"></script>
+
+</body>
+
+</html>
+```

@@ -1,0 +1,888 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            #30206b,
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            #123b55,
+            transparent 40%
+        ),
+        #080b14;
+
+    color: #f5f7ff;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   APP
+========================= */
+
+.app {
+    width: 100%;
+    max-width: 520px;
+    margin: auto;
+    padding: 18px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    margin-bottom: 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #06b6d4
+        );
+
+    box-shadow:
+        0 8px 25px rgba(76, 29, 149, 0.4);
+}
+
+.brand h1 {
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.brand p {
+    margin: 3px 0 0;
+
+    color: #8992a8;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   GLASS CARD
+========================= */
+
+.glass-card {
+    margin-bottom: 14px;
+    padding: 16px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 13px;
+}
+
+.icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: rgba(124, 58, 237, 0.14);
+
+    font-size: 15px;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    font-size: 14px;
+}
+
+.section-title p {
+    margin: 3px 0 0;
+
+    font-size: 11px;
+
+    color: #8992a8;
+}
+
+
+/* =========================
+   FILE UPLOAD
+========================= */
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 13px;
+
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.file-upload:hover {
+    border-color: rgba(139, 92, 246, 0.6);
+
+    background:
+        rgba(139, 92, 246, 0.06);
+}
+
+.file-upload strong {
+    display: block;
+
+    font-size: 12px;
+}
+
+.file-upload span {
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 10px;
+
+    color: #8992a8;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+
+    max-width: 320px;
+}
+
+.upload-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #a78bfa;
+
+    font-size: 18px;
+}
+
+#resumeInput {
+    display: none;
+}
+
+
+/* =========================
+   ANALYZE BUTTON
+========================= */
+
+.analyze-btn {
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    color: white;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(79, 70, 229, 0.3);
+
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
+}
+
+.analyze-btn:hover {
+    transform: translateY(-1px);
+}
+
+.analyze-btn:disabled {
+    opacity: 0.55;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    min-height: 18px;
+
+    margin: 10px 2px;
+
+    text-align: center;
+
+    color: #8992a8;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   JOB CARD
+========================= */
+
+.job-badge {
+    display: inline-block;
+
+    margin-bottom: 9px;
+
+    padding: 4px 8px;
+
+    border-radius: 6px;
+
+    background:
+        rgba(124, 58, 237, 0.14);
+
+    color: #a78bfa;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.7px;
+}
+
+.job-card h2 {
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1.25;
+}
+
+.company {
+    margin: 7px 0 0;
+
+    color: #d6d9e4;
+
+    font-size: 12px;
+}
+
+.location {
+    margin: 4px 0 0;
+
+    color: #8992a8;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   SCORE
+========================= */
+
+.score-card {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+}
+
+.score-info {
+    flex: 1;
+}
+
+.eyebrow {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8992a8;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.score-info h3 {
+    margin: 0;
+
+    font-size: 16px;
+}
+
+.score-info p {
+    margin: 5px 0 0;
+
+    color: #8992a8;
+
+    font-size: 10px;
+}
+
+.score {
+    width: 76px;
+    height: 76px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #8b5cf6 0deg,
+            #3b82f6 270deg,
+            rgba(255,255,255,0.08) 270deg
+        );
+
+    position: relative;
+}
+
+.score::after {
+    content: "";
+
+    position: absolute;
+
+    width: 62px;
+    height: 62px;
+
+    border-radius: 50%;
+
+    background: #111522;
+}
+
+.score span {
+    position: relative;
+
+    z-index: 1;
+
+    font-size: 17px;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 10px;
+}
+
+.mini-card {
+    margin-bottom: 14px;
+
+    padding: 13px 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+.mini-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 6px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(34, 197, 94, 0.12);
+
+    font-size: 11px;
+}
+
+.mini-icon.warning {
+    background:
+        rgba(245, 158, 11, 0.12);
+}
+
+.mini-card strong {
+    font-size: 17px;
+}
+
+.mini-card > span:last-child {
+    margin-top: 2px;
+
+    color: #8992a8;
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 13px;
+}
+
+.section-heading h3 {
+    margin: 0;
+
+    font-size: 13px;
+}
+
+.heading-icon {
+    width: 27px;
+    height: 27px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background:
+        rgba(124, 58, 237, 0.12);
+
+    font-size: 11px;
+}
+
+.success {
+    background:
+        rgba(34, 197, 94, 0.12);
+}
+
+.danger {
+    background:
+        rgba(239, 68, 68, 0.12);
+}
+
+.warning {
+    background:
+        rgba(245, 158, 11, 0.12);
+}
+
+
+/* =========================
+   SKILL GROUP
+========================= */
+
+.skill-group {
+    margin-top: 13px;
+}
+
+.group-title {
+    margin-bottom: 8px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+.success-text {
+    color: #4ade80;
+}
+
+.danger-text {
+    color: #f87171;
+}
+
+.warning-text {
+    color: #fbbf24;
+}
+
+.skill-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+
+/* =========================
+   SKILL CHIP
+========================= */
+
+.skill-chip {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 9px;
+
+    border-radius: 8px;
+
+    font-size: 10px;
+
+    border: 1px solid transparent;
+}
+
+.skill-chip.success {
+    background:
+        rgba(34, 197, 94, 0.1);
+
+    border-color:
+        rgba(34, 197, 94, 0.18);
+
+    color: #86efac;
+}
+
+.skill-chip.danger {
+    background:
+        rgba(239, 68, 68, 0.1);
+
+    border-color:
+        rgba(239, 68, 68, 0.18);
+
+    color: #fca5a5;
+}
+
+.skill-chip.warning {
+    background:
+        rgba(245, 158, 11, 0.1);
+
+    border-color:
+        rgba(245, 158, 11, 0.18);
+
+    color: #fcd34d;
+}
+
+.empty-state {
+    color: #697287;
+
+    font-size: 10px;
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.text-content {
+    margin: 0;
+
+    color: #aeb5c7;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   REQUIREMENTS
+========================= */
+
+.requirement-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 9px 0;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+    color: #aeb5c7;
+
+    font-size: 11px;
+}
+
+.requirement-row strong {
+    color: #f5f7ff;
+
+    font-size: 12px;
+}
+
+.requirement-row + .text-content {
+    margin-top: 12px;
+}
+
+
+/* =========================
+   RECOMMENDATIONS
+========================= */
+
+.recommendation-card ul {
+    margin: 0;
+
+    padding: 0;
+
+    list-style: none;
+}
+
+.recommendation-card li {
+    position: relative;
+
+    padding: 8px 0 8px 17px;
+
+    border-bottom:
+        1px solid rgba(255,255,255,0.05);
+
+    color: #b8bfd0;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+.recommendation-card li:last-child {
+    border-bottom: none;
+}
+
+.recommendation-card li::before {
+    content: "→";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #a78bfa;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   APPLY CARD
+========================= */
+
+.apply-card {
+    padding: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(34, 197, 94, 0.08),
+            rgba(255, 255, 255, 0.04)
+        );
+}
+
+.apply-card h2 {
+    margin: 5px 0 5px;
+
+    font-size: 19px;
+}
+
+.apply-card p {
+    margin: 0;
+
+    color: #aeb5c7;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background:
+        rgba(255,255,255,0.12);
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   MOBILE / SMALL PANEL
+========================= */
+
+@media (max-width: 360px) {
+
+    .app {
+        padding: 12px;
+    }
+
+    .summary-grid {
+        gap: 6px;
+    }
+
+    .score {
+        width: 68px;
+        height: 68px;
+    }
+
+    .score::after {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+
+
+
+
+
+.score-row {
+    margin-top: 15px;
+}
+
+.score-row-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+
+    font-size: 10px;
+
+    color: #aeb5c7;
+}
+
+.score-row-header strong {
+    color: #f5f7ff;
+
+    font-size: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+}
+
+.progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #7c3aed,
+            #3b82f6
+        );
+
+    transition:
+        width 0.6s ease;
+}
+
