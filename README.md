@@ -1,5 +1,10 @@
 # 🚀 JobCheck
 
+## 📸 Screenshots
+
+![JobCheck Demo](screenshots/jobcheck-demo.png)
+
+
 **AI-powered job and resume matching assistant for LinkedIn**
 
 JobCheck is a Chrome extension that analyzes a LinkedIn job posting against your resume and generates a concise match report.
@@ -18,6 +23,9 @@ It helps you quickly understand:
 JobCheck runs locally on your computer, so you don't need to deploy the backend to use it.
 
 ---
+
+
+
 
 ## ✨ Features
 
