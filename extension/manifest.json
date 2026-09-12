@@ -1,3 +1,4 @@
+
 {
   "manifest_version": 3,
 
@@ -6,6 +7,8 @@
   "version": "1.0.0",
 
   "description": "AI-powered job and resume matching assistant",
+
+  "minimum_chrome_version": "114",
 
   "permissions": [
     "activeTab",
@@ -54,3 +57,4 @@
     }
   ]
 }
+
